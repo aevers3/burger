@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(245, 200, 0);
+}
+
+.to-devour {
+    background: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.devoured {
+    background: white;
+    color: #999;
+    font-family: 'Courier New', Courier, monospace;
+}
