@@ -7,13 +7,19 @@ var keys = require("../keys");
 // console.log(keys.mysql.id);
 // console.log(keys.mysql.secret);
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: keys.mysql.secret,
-    database: "burgers_db"
-});
+var connection;
+
+if (process.env.JAWSDB_URL) {
+    mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: keys.mysql.secret,
+        database: "burgers_db"
+    });
+}
 
 // Make connection.
 connection.connect(function (err) {
